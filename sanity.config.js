@@ -3,13 +3,11 @@ import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
 
-export default defineConfig([
-  {
-    name: 'default',
-    title: 'Primis Nexus CMS',
-    projectId: 'zh12zogr',
-    dataset: 'production',
-    plugins: [structureTool(), visionTool()],
-    schema: { types: schemaTypes },
-  },
-])
+export default defineConfig({
+  name: 'default',
+  title: 'Primis Nexus CMS',
+  projectId: 'zh12zogr',
+  dataset: 'production',
+  plugins: [structureTool(), visionTool()],
+  schema: { types: schemaTypes }
+})
