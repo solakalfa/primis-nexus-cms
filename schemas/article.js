@@ -1,4 +1,4 @@
-﻿// ✅ הגדרת טיפוס קטגוריה נפרד (נדרש ל-GraphQL)
+// ✅ הגדרת טיפוס קטגוריה נפרד (נדרש ל-GraphQL)
 export const category = {
   name: 'category',
   title: 'Category',
@@ -71,7 +71,6 @@ export default {
       type: 'array',
       of: [{ type: 'block' }]
     },
-    // ✅ משתמש בטיפוס החדש במקום object אנונימי
     {
       name: 'categories',
       title: 'Categories',
@@ -132,6 +131,33 @@ export default {
       title: 'Reading Time',
       type: 'string',
       description: 'e.g. "5 min read"'
+    },
+    {
+      name: 'metadata',
+      title: 'Campaign Metadata',
+      type: 'object',
+      description: 'Campaign tracking data (campaign_id, external_ref)',
+      fields: [
+        {
+          name: 'campaign_id',
+          title: 'Campaign ID',
+          type: 'string',
+          description: 'Facebook/Taboola campaign identifier'
+        },
+        {
+          name: 'external_ref',
+          title: 'External Reference',
+          type: 'string',
+          description: 'Client reference ID (e.g. tarzo-job-8b1a)'
+        }
+      ]
+    },
+    {
+      name: 'showRsocFeed',
+      title: 'Show RSOC Feed',
+      type: 'boolean',
+      description: 'Display RSOC keywords monetization block in article',
+      initialValue: true
     }
   ]
 };
